@@ -1,7 +1,7 @@
 {
   "name": "feature-flag-nirvana",
   "version": "1.0.0",
-  "description": "feature flag comparision tool",
+  "description": "feature flag comparison tool",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -10,5 +10,10 @@
   "devDependencies": {
     "@types/node": "^18.11.9",
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^1.1.3",
+    "dotenv": "^16.0.3"
   }
 }
