@@ -1,0 +1,14 @@
+{
+  "name": "feature-flag-nirvana",
+  "version": "1.0.0",
+  "description": "feature flag comparision tool",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.8.4"
+  }
+}
