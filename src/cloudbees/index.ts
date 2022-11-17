@@ -1,13 +1,37 @@
 import axios from "axios";
 
-export async function getFlags() {
-  const endpoint = `https://x-api.rollout.io/public-api/applications/${process.env.CLOUDBEES_APP_ID}/Production/flags`;
+const BASE_ENDPOINT = "https://x-api.rollout.io/public-api/applications/";
+export function getFlags(
+  appId: string,
+  userToken: string,
+  environment: string
+) {
+  const endpoint = `${BASE_ENDPOINT}${appId}/${environment}/flags`;
   try {
-    return await axios(endpoint, {
+    return axios(endpoint, {
       method: "get",
       headers: {
         accept: "application/json",
-        authorization: `Bearer ${process.env.CLOUDBEES_USER_TOKEN}`,
+        authorization: `Bearer ${userToken}`,
+      },
+    });
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+export function getGroups(
+  appId: string,
+  userToken: string,
+  environment: string
+) {
+  const endpoint = `${BASE_ENDPOINT}${appId}/${environment}/target-groups`;
+  try {
+    return axios(endpoint, {
+      method: "get",
+      headers: {
+        accept: "application/json",
+        authorization: `Bearer ${userToken}`,
       },
     });
   } catch (e) {
